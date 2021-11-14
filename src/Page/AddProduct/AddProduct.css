@@ -1,0 +1,14 @@
+.Add-Packages form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+  .Add-Packages form input,
+  textarea {
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
