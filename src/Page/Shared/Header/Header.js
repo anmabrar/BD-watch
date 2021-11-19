@@ -15,21 +15,15 @@ const Header = () => {
     <Nav className="me-auto">
       <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
       <Nav.Link as={NavLink} to="/allProducts">Explore</Nav.Link>
-      <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-      <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+      {user.email &&
+      <Nav.Link as={NavLink} to="/dashboard">Dashboard</Nav.Link>}
     </Nav>
    
     <Nav className="d-flex align-items-center">
     {user.email &&
-       <NavDropdown title={user.displayName} id="collasible-nav-dropdown">
-       <NavDropdown.Item as={NavLink} to="/myOrders/3.1">My Order</NavDropdown.Item>
-       <NavDropdown.Item as={NavLink} to="/addReview/3.2">Add Review</NavDropdown.Item>
-       <NavDropdown.Item as={NavLink} to="/manageOrders/3.3">Manage Order</NavDropdown.Item>
-       <NavDropdown.Divider />
-       <NavDropdown.Item as={NavLink} to="/addProduct/3.4">Add Package</NavDropdown.Item>
-     </NavDropdown>
-    }
-   
+    
+    <h6 className="text-light mx-3">{user.displayName}</h6>
+     }
    {user.email ? (
                 <button className="btn btn-primary my-1" onClick={logOut}>
                   Logout

@@ -15,7 +15,7 @@ const Review = () => {
                     <div className="col-md-3 p-1">
                     <div className="border border p-3">
                       <div className="">
-                        <img className="border rounded-circle w-10" src={r?.img} alt="" />
+                        <img className="border rounded-circle w-10" src={r?.img} alt="..." />
                       </div>
                       <h5 className="mt-3 text-success" >{r?.user}</h5>
                       <h6 className="">{r?.review}</h6>

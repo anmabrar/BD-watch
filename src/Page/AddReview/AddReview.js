@@ -9,15 +9,16 @@ const AddReview = () => {
     
     const onSubmit = data =>{
         data.img = user.photoURL;
-   fetch("http://localhost:5000/addReview", {
+    fetch("http://localhost:5000/addReview", {
        method: "POST",
        headers: { "content-type": "application/json" },
        body: JSON.stringify(data),
+       
    })
      .then((res) => res.json())
      .then((result) => console.log(result));
      reset();
-      
+     console.log(data);
        };
     return (
         <div className="Add-Review">

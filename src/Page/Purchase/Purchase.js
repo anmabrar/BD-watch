@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
+import useAuth from '../../Hook/useAuth';
 
 const Purchase = () => {
+    const {user} = useAuth()
     const {productID} =useParams();
     const [watchProduct , setWatchProduct] = useState({});
-
-    const email = sessionStorage.getItem("email");
 
     useEffect(() => {
         fetch(`http://localhost:5000/purchaseProduct/${productID}`)
@@ -22,7 +22,7 @@ const Purchase = () => {
       } = useForm();
     
       const onSubmit = (data) => {
-        data.email = email;
+        data.email = user.email;
         data.status = "pending";
     
         fetch("http://localhost:5000/confirmOrder", {

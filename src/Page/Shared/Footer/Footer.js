@@ -46,7 +46,7 @@ const Footer = () => {
               </ul>
             </Col>
           </Row>
-          <div>
+          <div className="mb-0">
             <p>© 2021 All Rights Reserved Antor</p>
           </div>
         </Container>

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../Hook/useAuth';
 
 const MyOrder = () => {
-    const email = sessionStorage.getItem("email");
+    const {user} = useAuth()
     const [order, setOrder] = useState([]);
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`http://localhost:5000/myOrders/${user.email}`)
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, [control]);
      
-      console.log(setOrder)
       const handleDelete = (id) => {
         fetch(`http://localhost:5000/deleteOrder/${id}`, {
           method: "DELETE",
@@ -23,9 +23,9 @@ const MyOrder = () => {
               setControl(!control);
             }
           });
-        console.log(id, email);
+        
       };
-
+      
     return (
         <div className ="container">
       <h1 className="text-center m-5">My orders </h1>

@@ -12,6 +12,11 @@ import Purchase from './Page/Purchase/Purchase';
 import MyOrder from './Page/MyOrder/MyOrder';
 import ManageOrder from './Page/ManageOrder/ManageOrder';
 import AddReview from './Page/AddReview/AddReview';
+import Register from './Page/Login/Register/Register';
+import PrivateRoute from './Page/PrivateRoute/PrivateRoute';
+import NotFound from './Page/NotFound/NotFound';
+import ManageProducts from './Page/ManageProducts/ManageProducts';
+import Dashboard from './Page/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -29,23 +34,35 @@ function App() {
             <Route path ="/login">
               <Login></Login>
             </Route>
+            <Route path ="/register">
+              <Register></Register>
+            </Route>
+            <PrivateRoute path ="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <Route  path ="/allProducts">
               <AllProducts></AllProducts>
             </Route>
-            <Route  path ="/purchase/:productID">
+            <PrivateRoute  path ="/purchase/:productID">
              <Purchase></Purchase>
-            </Route>
-            <Route path="/addProduct">
+            </PrivateRoute>
+            {/* <Route path="/addProduct">
               <AddProduct></AddProduct>
             </Route>
             <Route path="/myOrders">
               <MyOrder></MyOrder>
             </Route>
-            <Route path="/manageOrders">
+            <PrivateRoute path="/manageOrders">
              <ManageOrder></ManageOrder>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/manageProducts">
+             <ManageProducts></ManageProducts>
+            </PrivateRoute>
             <Route path="/addReview">
             <AddReview></AddReview>
+            </Route> */}
+            <Route path="*">
+            <NotFound></NotFound>
             </Route>
             
           </Switch>
