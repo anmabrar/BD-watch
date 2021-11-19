@@ -7,13 +7,13 @@ const MyOrder = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user.email}`)
+        fetch(`https://fast-forest-95996.herokuapp.com/myOrders/${user.email}`)
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, [control]);
      
       const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://fast-forest-95996.herokuapp.com/deleteOrder/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

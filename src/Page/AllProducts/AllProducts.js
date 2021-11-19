@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AllProducts = () => {
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/allProduct")
+        fetch("https://fast-forest-95996.herokuapp.com/allProduct")
           .then((res) => res.json())
           .then((data) => setProduct(data));
       }, []);
@@ -23,7 +23,7 @@ const AllProducts = () => {
               </div>
 
               <h5 className="mt-3" >{p?.name}</h5>
-              <h4 className="text-danger">Price : {p?.price} Tk</h4>
+              <h4 className="text-danger">Price : {p?.price} $</h4>
               <Link to={`/purchase/${p._id}`}>
                 <button className="btn btn-success">Buy Now</button>
               </Link>

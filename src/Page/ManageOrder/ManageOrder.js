@@ -12,14 +12,14 @@ const ManageOrder = () => {
       };
       console.log(setStatus);
       useEffect(() => {
-        fetch("http://localhost:5000/manageOrders")
+        fetch("https://fast-forest-95996.herokuapp.com/manageOrders")
           .then((res) => res.json())
           .then((data) => setManageOrder(data));
       }, [control]);
     
         // const status = "approved";
       const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://fast-forest-95996.herokuapp.com/updateStatus/${id}`, {
           method: "PUT",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ status }),
@@ -27,7 +27,7 @@ const ManageOrder = () => {
       };
 
       const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://fast-forest-95996.herokuapp.com/deleteOrder/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

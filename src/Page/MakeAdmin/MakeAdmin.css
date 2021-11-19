@@ -1,0 +1,10 @@
+.MakeAdmin  {
+    margin-top: 20px;
+    display :block;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+ 

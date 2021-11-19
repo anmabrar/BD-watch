@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './MakeAdmin.css'
 
 const MakeAdmin = () => {
     const [email, setEmail] =useState('');
@@ -7,7 +8,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e =>{
         const user ={email};
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://fast-forest-95996.herokuapp.com/users/admin',{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -22,14 +23,14 @@ const MakeAdmin = () => {
     }
 
     return (
-        <div>
+        <div className="  ">
+            <form className="MakeAdmin " onSubmit={handleAdminSubmit}>
             <h2>Make an Admin</h2>
-            <form onSubmit={handleAdminSubmit}>
-            <div className="mb-3">
+            <div className="mb-3 position-relative">
                         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                         <input name="email"  type="email" onBlur={handleOnBlur} className="form-control" />
              </div>
-            <button>Make Admin</button>
+            <button className = " btn btn-primary">Make Admin</button>
             </form>
         </div>
     );

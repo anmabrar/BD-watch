@@ -9,7 +9,7 @@ const Purchase = () => {
     const [watchProduct , setWatchProduct] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchaseProduct/${productID}`)
+        fetch(`https://fast-forest-95996.herokuapp.com/purchaseProduct/${productID}`)
         .then((res) => res.json())
         .then((data) => setWatchProduct(data));
       } , []);
@@ -25,7 +25,7 @@ const Purchase = () => {
         data.email = user.email;
         data.status = "pending";
     
-        fetch("http://localhost:5000/confirmOrder", {
+        fetch("https://fast-forest-95996.herokuapp.com/confirmOrder", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),
@@ -49,7 +49,7 @@ const Purchase = () => {
       </div>
       <h2 className="mt-3">{watchProduct?.name}</h2>
       <p className="text-start">{watchProduct?.description}</p>
-      <h1> price: {watchProduct?.price} Tk</h1>
+      <h1> price: {watchProduct?.price} $</h1>
     </div>
     <div className="col-md-6">
       <form onSubmit={handleSubmit(onSubmit)}>

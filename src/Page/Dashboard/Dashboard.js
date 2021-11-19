@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './Dashboard.css'
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import AddProduct from "../AddProduct/AddProduct";
+import ManageOrder from "../ManageOrder/ManageOrder";
+import ManageProducts from "../ManageProducts/ManageProducts"
 import MyOrder from "../MyOrder/MyOrder";
 import AddReview from "../AddReview/AddReview";
 import Payment from "../Payment/Payment"
@@ -19,15 +21,15 @@ const Dashboard = () => {
       <div className="dashboard-container ">
         <div className="row">
           <div className="col-md-2 ">
-            <div className="dashboard">
+            <div className="dashboard ">
               <h5>Dashboard</h5>
+              
               <Link to={`${url}/payment`}>
                 <li className="dashboard-menu mt-5">Payment</li>
               </Link>
               <Link to={`${url}/myOrder`}>
                 <li className="dashboard-menu mt-">My Order</li>
               </Link>
-
               <Link to={`${url}/addReview`}>
                 <li className="dashboard-menu mt-">Add Review</li>
               </Link>
@@ -50,7 +52,6 @@ const Dashboard = () => {
                 </Link>
               </div>  )}
             </div>
-           
           </div>
           <div className="col-md-10">
             <Switch>
@@ -67,11 +68,13 @@ const Dashboard = () => {
               </Route>
               
               <AdminRoute exact path={`${path}/manageOrder`}>
+              <ManageOrder></ManageOrder>
               </AdminRoute>
               <AdminRoute exact path={`${path}/addProduct`}>
                 <AddProduct></AddProduct>
               </AdminRoute>
               <AdminRoute exact path={`${path}/manageProducts`}>
+                <ManageProducts></ManageProducts>
               </AdminRoute>
               <AdminRoute exact path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>

@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../Hook/useAuth';
 
 const ManageProducts = () => {
     const [product, setProduct] = useState([]);
-    const {user} = useAuth()
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/manageProducts")
+        fetch("https://fast-forest-95996.herokuapp.com/manageProducts")
           .then((res) => res.json())
           .then((data) => setProduct(data));
       }, [control]);
 
       const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteProduct/${id}`, {
+        fetch(`https://fast-forest-95996.herokuapp.com/deleteProduct/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

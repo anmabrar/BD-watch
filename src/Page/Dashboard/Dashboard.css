@@ -6,6 +6,7 @@
   }
   .dashboard-menu {
     list-style: none;
+    text-decoration: none;
     margin-top: 10px;
   }
   .dashboard-menu:hover {

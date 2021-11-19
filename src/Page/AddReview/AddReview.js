@@ -9,7 +9,7 @@ const AddReview = () => {
     
     const onSubmit = data =>{
         data.img = user.photoURL;
-    fetch("http://localhost:5000/addReview", {
+    fetch("https://fast-forest-95996.herokuapp.com/addReview", {
        method: "POST",
        headers: { "content-type": "application/json" },
        body: JSON.stringify(data),

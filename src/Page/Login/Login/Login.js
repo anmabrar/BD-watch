@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../Hook/useAuth';
-import { useForm } from 'react-hook-form';
 import { Spinner } from 'react-bootstrap';
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { reset, register, formState: { errors }, handleSubmit} = useForm();
-  const { user, loginUser, signInWithGoogle, loading, authError } = useAuth();
+  
+  const {loginUser, signInWithGoogle, loading } = useAuth();
 
   const location = useLocation();
   const history = useHistory();
@@ -22,7 +21,6 @@ const Login = () => {
     setLoginData(newLoginData);
 }
 const handleLoginSubmit = e => {
-    alert("Are you login ?")
     loginUser(loginData.email, loginData.password, location, history);
     e.preventDefault();
 }

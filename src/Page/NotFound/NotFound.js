@@ -2,8 +2,8 @@ import React from 'react';
 
 const NotFound = () => {
     return (
-        <div>
-            <h1>404 Not Found !!</h1>
+        <div className="d-flex justify-content-center ">
+            <img src="https://cdn.dribbble.com/users/1129101/screenshots/3513987/404.gif" alt="" />
         </div>
     );
 };

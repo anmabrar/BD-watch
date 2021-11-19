@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hook/useAuth';
 
@@ -17,7 +17,7 @@ const Header = () => {
       <Nav.Link as={NavLink} to="/allProducts">Explore</Nav.Link>
       {user.email &&
       <Nav.Link as={NavLink} to="/dashboard">Dashboard</Nav.Link>}
-    </Nav>
+     </Nav>
    
     <Nav className="d-flex align-items-center">
     {user.email &&

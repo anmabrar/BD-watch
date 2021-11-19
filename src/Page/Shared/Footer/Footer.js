@@ -17,12 +17,7 @@ const Footer = () => {
                 BD Watch
               </h6>
               <p>
-                BD Watch is a trusted and reliable Watch and travel agency among
-                all the leading and updated Watch-operating services in
-                Bangladesh. We are here to bring the luxury to your traveling.
-                BD Watch is a proud member of Association of Travel Agents of
-                Bangladesh-ATAB and Watch Operators Association of Bangladesh.
-                Safe traveling, your security, and your enjoyment are our focus
+                BD Watch is a trusted and reliable Watch seller agency in Bangladesh.Watches are the most elegant and classy accessories, that adorn your wrist in addition to performing its function of telling the time. 
               </p>
             </Col>
             <Col>
@@ -47,7 +42,7 @@ const Footer = () => {
             </Col>
           </Row>
           <div className="mb-0">
-            <p>© 2021 All Rights Reserved Antor</p>
+            <p>© 2021 All Rights Reserved BD watch</p>
           </div>
         </Container>
       </div>

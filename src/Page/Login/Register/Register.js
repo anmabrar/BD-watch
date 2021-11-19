@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useForm } from "react-hook-form";
 import { useHistory, useLocation} from 'react-router';
 import useAuth from '../../../Hook/useAuth';
 import { Alert, Spinner } from 'react-bootstrap';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const { reset, register, formState: { errors }, handleSubmit} = useForm();
-    const { user, loginUser,registerUser, signInWithGoogle, loading, authError } = useAuth();
+    const {registerUser, signInWithGoogle, loading } = useAuth();
   
     const location = useLocation();
     const history = useHistory();
